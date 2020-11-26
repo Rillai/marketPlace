@@ -1,0 +1,14 @@
+.cartContainer td{
+    padding: 5px;
+    border: 1px solid black;
+}
+.cartContainer button{
+    width: 25px;
+    height: 25px;
+    line-height: 20px;
+    border: 1px solid gray;
+    transition: all 0.3s ease 0s;
+}
+.cartContainer button:hover{
+background-color: rgb(214, 214, 214);
+}

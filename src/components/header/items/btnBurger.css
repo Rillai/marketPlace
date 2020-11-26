@@ -1,0 +1,94 @@
+.btn-burger {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 48px;
+    height: 47px;
+    background: 0 0;
+    border: 1px solid rgba(255, 255, 255, .4);
+    padding: 10px 9px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 12px;
+    margin-right: 15px;
+}
+
+.btn-burger span {
+    position: relative;
+    display: block;
+    width: 28px;
+    height: 4px;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.btn-burger span::before,
+.btn-burger span::after {
+    position: absolute;
+    left: 0;
+    content: '';
+    width: 28px;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.btn-burger span::before {
+    top: 10px;
+}
+
+.btn-burger span::after {
+    bottom: 10px;
+}
+
+.btn-burger:hover {
+    border: 1px solid #fff;
+}
+.burger-list{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    transition: all 0.4s ease 0s;
+}
+.burger-list-active{
+    background-color: rgba(54, 54, 54, 0.384);
+    z-index: 1;
+}
+.go-back{
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+}
+.burger-list nav{
+    transition: all 0.2s ease 0s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(243, 243, 243);
+    width: 300px;
+    height: 100%;
+    transform: translate(-300px);
+}
+.burger-list-active nav{
+    transition: all 0.2s ease 0.4s;
+    transform: translate(0px);
+}
+.burger-list nav a{
+    color: black;
+    padding: 3px;
+    margin: 5px 0;
+    border-radius: 8px;
+    width: 85%;
+    text-align: center;
+    border: 1px solid black;
+    transition: all 0.3s ease 0s;
+}
+.burger-list nav a:hover{
+    background-color: #cb11ab;
+    color: #fff;
+}

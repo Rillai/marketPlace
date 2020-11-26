@@ -1,0 +1,96 @@
+.content{
+    width: 100%;
+}
+.productsContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(33.33% - 100px);
+    margin: 0px 50px;
+    margin-bottom: 35px;
+}
+
+.product:hover {
+    box-shadow: 4px 4px 13px 0px rgba(116, 116, 116, 0.493);
+}
+
+.product {
+    padding: 10px 10px 16px;
+}
+
+.product .addToCart {
+    border: 1px solid rgba(0, 0, 0, 0.516);
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin-top: 7px;
+    cursor: pointer;
+    background-color: white;
+}
+
+.product .addToCart:hover {
+    color: #cb11ac;
+    border: 1px solid black;
+}
+
+.price {
+    margin-top: 15px;
+}
+
+.stars {
+    color: #cb11ab;
+}
+
+.pagination,
+.sortPanel {
+    padding: 9px 13px;
+    background-color: rgba(221, 221, 221, 0.274);
+}
+
+.pagination {
+    margin-bottom: 25px;
+}
+
+.pagination span {
+    padding: 3px;
+    margin: 0 4px;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 4px;
+    transition: all 0.3s ease 0s;
+    background-color: white;
+}
+
+.pagination .active, .product .active{
+    background-color: #cb11ac96;
+    color: #fff;
+}
+.active:hover{
+    color: #fff!important;
+    opacity: 0.8;
+}
+.pagination span:hover {
+    background-color: #cb11ac96;
+    color: #fff;
+}
+
+.sortPanel {
+    border-bottom: 1px solid rgb(139, 139, 139);
+}
+
+.sortPanel button:not(:first-child) {
+    margin-left: 10px;
+}
+.sortPanel button{
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    background-color: white;
+}
+.sortPanel button:hover{
+    background-color: #cb11ac96;
+    color: white;
+}
