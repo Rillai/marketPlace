@@ -72,3 +72,6 @@ select {
   -moz-appearance: none;
   appearance: none;
 }
+button{
+  transition: all 0.3s ease 0s;
+}

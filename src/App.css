@@ -1,8 +1,9 @@
-.container{
+.container {
   max-width: 1220px;
   padding: 0 35px;
   margin: auto;
 }
+
 .go-top {
   position: fixed;
   font-size: 40px;
@@ -11,17 +12,23 @@
   z-index: 999;
   bottom: 50px;
 }
-.app-content{
-  display: flex;
+
+.app-content {
   margin-top: -25px;
-  padding-top: 45px;
+  padding-top: 65px;
   background-color: white;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
 }
-.aside{
+
+.relative {
+  position: relative;
+}
+
+.aside {
   margin-left: auto;
 }
+
 .go-top img {
   background-color: #104F95;
   border: 3px solid rgba(255, 255, 255, 0.794);
@@ -36,13 +43,29 @@
   background-color: #FFBB00;
   border: 3px solid rgba(0, 0, 0, 0.63);
 }
+
+.breadCrumbs {
+  position: absolute;
+  border: 2px solid rgba(0, 0, 0, 0.336);
+  padding: 5px 10px;
+  left: 37px;
+  top: -50px;
+}
+.breadCrumbs a{
+  color: black;
+}
+.breadCrumbs a:hover{
+  color: #104F95;
+}
+
 @media only screen and (max-width : 500px) {
-.go-top{
-  left: 15px;
-  bottom: 15px;
-}
-.go-top img{
-  width: 40px;
-  height: 40px;
-}
+  .go-top {
+    left: 15px;
+    bottom: 15px;
+  }
+
+  .go-top img {
+    width: 40px;
+    height: 40px;
+  }
 }

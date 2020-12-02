@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom';
-import './btnBurger.css';
+
 export function BtnBurger() {
     const [isShow, setisShow] = useState(false);
     const toggleFIeldset = () => setisShow(!isShow);
@@ -14,7 +14,7 @@ export function BtnBurger() {
                     <NavLink to='/category/female'>Женские товары</NavLink>
                     <NavLink to='/category/children'>Детские товары</NavLink>
                 </nav>
-                <div className='go-back' onClick={toggleFIeldset}/>
+                <div className='go-back' onClick={toggleFIeldset} />
             </div>
         </>)
 }

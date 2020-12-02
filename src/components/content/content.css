@@ -36,6 +36,10 @@
     color: #cb11ac;
     border: 1px solid black;
 }
+.product .active:hover{
+    color: #fff;
+    opacity: 0.8;
+}
 
 .price {
     margin-top: 15px;
@@ -69,10 +73,7 @@
     background-color: #cb11ac96;
     color: #fff;
 }
-.active:hover{
-    color: #fff!important;
-    opacity: 0.8;
-}
+
 .pagination span:hover {
     background-color: #cb11ac96;
     color: #fff;
