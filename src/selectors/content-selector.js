@@ -9,8 +9,8 @@ export const products = (state, sortMode, reverse) => {
         reverse: reverse
     }
 }
+//Сортировка продуктов
 export const productsSelector = createSelector(products, (props) => {
-    let products = props.products
     if (props.sortMode) {
         const sort = () => {
             if (props.sortMode === 'name') {
@@ -20,20 +20,18 @@ export const productsSelector = createSelector(products, (props) => {
             }
         }
         if (props.reverse === true) {
-            products = products.sort(sort()).reverse()
+            props.products.sort(sort()).reverse()
         }
         else {
-            products = products.sort(sort())
+            props.products.sort(sort())
         }
     }
-    return products.slice(props.start, props.end)
+    return props.products.slice(props.start, props.end)
 })
 
-
-
 export const pagesCountSelector = (state) => {
-    let pagesCount = Math.ceil(state.content.products.length / state.content.pageSize);
-    let pages = [];
+    const pagesCount = Math.ceil(state.content.products.length / state.content.pageSize);
+    const pages = [];
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i)
     }

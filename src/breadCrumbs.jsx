@@ -3,9 +3,6 @@ import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 
 export const BreadCrumbs = (props) => {
-  const location = useLocation();
-  const path = location.pathname.split('/');
-  let root = '/'
   const translate = (pathName) => {
     switch (pathName) {
       case 'cart':
@@ -22,6 +19,9 @@ export const BreadCrumbs = (props) => {
         return 'детская'
     }
   }
+  const location = useLocation();
+  const path = location.pathname.split('/');
+  let root = '/'
 
   return (
     <nav className='breadCrumbs'>

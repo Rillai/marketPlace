@@ -7,17 +7,18 @@ let initialState = {
     cardInfo: {},
     userAdress: {}
 };
+
+const handlersInfo = {
+    [SET_USER_INFO]: (state, action) => ({ ...state, userInfo: action.userInfo, }),
+    [SET_CARD_INFO]: (state, action) => ({ ...state, cardInfo: action.cardInfo }),
+    [SET_USER_ADRESS]: (state, action) => ({ ...state, userAdress: action.userAdress }),
+};
+
 export const OrderReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case SET_USER_INFO:
-            return { ...state, userInfo: action.userInfo }
-        case SET_CARD_INFO:
-            return { ...state, cardInfo: action.cardInfo }
-        case SET_USER_ADRESS:
-            return { ...state, userAdress: action.userAdress }
-        default:
-            return state;
+    if (handlersInfo[action.type]) {
+        return handlersInfo[action.type](state, action);
     }
+    return state
 };
 
 export const setUserInfo = (userInfo) => ({ type: SET_USER_INFO, userInfo })

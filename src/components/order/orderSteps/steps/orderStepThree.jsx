@@ -1,18 +1,23 @@
 import React, { useRef } from 'react'
 import { GeolocationControl, Map, SearchControl, YMaps } from 'react-yandex-maps'
+import { useDispatch } from 'react-redux';
+import { setUserAdress } from './../../../../redux/order-reducer';
 
-export function OrderThree(props) {
-    const searchRef = useRef('');
+export const OrderStepThree = (props) => {
+    const dispatch = useDispatch()
+    const searchRef = useRef();
     const lastStep = () => {
         if (searchRef.current) {
             let adress = searchRef.current.state.getAll().inputValue
             if (adress) {
                 if (window.confirm(`Это ваш адрес? ${adress}`)) {
-                    props.navigate(3, adress)
+                    dispatch(setUserAdress(adress))
+                    props.navigate('end')
                 }
             }
         }
     }
+
     return (
         <YMaps query={{ apikey: 'd5be9f57-5000-4836-8a5e-364c943f0b3b', lang: 'ru_RU' }}>
             <div className='map'>

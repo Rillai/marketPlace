@@ -22,17 +22,25 @@ let initialState = {
     currentPage: 1,
     pageSize: 9,
 };
+
+const handlersPage = {
+    [SET_PAGE]: (state, action) =>
+        ({ ...state, currentPage: action.currentPage }),
+};
+const handlersButton = {
+    [SET_ACTIVE_BUTTON]: (state, action) =>
+        ({ ...state, activeButton: [...state.activeButton, action.id] }),
+    [UNSET_ACTIVE_BUTTON]: (state, action) =>
+        ({ ...state, activeButton: [...state.activeButton.filter((button) => button !== action.id),] }),
+}
+
 export const ContentReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case SET_PAGE:
-            return { ...state, currentPage: action.currentPage }
-        case SET_ACTIVE_BUTTON:
-            return { ...state, activeButton: [...state.activeButton, action.id] }
-        case UNSET_ACTIVE_BUTTON:
-            return { ...state, activeButton: [...state.activeButton.filter((button) => button !== action.id),] }
-        default:
-            return state;
+    if (handlersPage[action.type]) {
+        return handlersPage[action.type](state, action);
+    } else if (handlersButton[action.type]) {
+        return handlersButton[action.type](state, action);
     }
+    return state
 };
 
 export const setCurrentPageAction = (currentPage) => ({ type: SET_PAGE, currentPage })

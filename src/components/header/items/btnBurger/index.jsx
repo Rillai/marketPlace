@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom';
 
-export function BtnBurger() {
+export const BtnBurger = () => {
     const [isShow, setisShow] = useState(false);
     const toggleFIeldset = () => setisShow(!isShow);
-    return (
-        <>
-            <button className='btn-burger' onClick={toggleFIeldset}><span></span></button>
+    return <>
+            <button className='btn-burger' onClick={toggleFIeldset}>
+                <span />
+            </button>
 
             <div className={isShow ? 'burger-list burger-list-active' : 'burger-list'}>
                 <nav>
@@ -16,5 +17,5 @@ export function BtnBurger() {
                 </nav>
                 <div className='go-back' onClick={toggleFIeldset} />
             </div>
-        </>)
+        </>
 }

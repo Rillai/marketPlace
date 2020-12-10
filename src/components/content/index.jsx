@@ -4,9 +4,9 @@ import { productsSelector } from '../../selectors/content-selector';
 import { useSelector } from 'react-redux';
 import { SortPanel } from './items/sortPanel';
 import { Pagination } from './items/pagination';
-import { ProductContainer } from './items/productsContainer/productsContainer';
+import { ProductsContainer } from './items/productsContainer';
 
-export function Content(props) {
+export const Content = () => {
     const [sortMode, setSortMode] = useState()
     const [reverse, setReverse] = useState()
     const products = useSelector(state => productsSelector(state, sortMode, reverse))
@@ -18,11 +18,12 @@ export function Content(props) {
             setSortMode(factor)
         }
     }
+    
     return (
         <div className='content'>
             <SortPanel setMode={setMode} />
             <Pagination />
-            <ProductContainer products={products} />
+            <ProductsContainer products={products} />
         </div>
     )
 }

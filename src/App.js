@@ -7,7 +7,7 @@ import { Cart } from './components/cart';
 import { Order } from './components/order/';
 import { BreadCrumbs } from './breadCrumbs';
 
-function App(props) {
+const App = (props) => {
   return (
     <div className="app" id='top'>
       <div>

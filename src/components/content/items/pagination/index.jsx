@@ -1,9 +1,9 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { setCurrentPageAction } from '../../../redux/content-reducer';
-import { pagesCountSelector, } from '../../../selectors/content-selector';
+import { setCurrentPageAction } from '../../../../redux/content-reducer';
+import { pagesCountSelector, } from '../../../../selectors/content-selector';
 
-export const Pagination = (props) => {
+export const Pagination = () => {
     const dispatch = useDispatch()
     const pagesCount = useSelector(pagesCountSelector)
     const currentPage = useSelector(state => state.content.currentPage)
