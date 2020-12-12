@@ -1,5 +1,7 @@
 import React from 'react'
 
 export const Input = (props) => {
-    return <input {...props} value={props.value} maxLength={props.max} minLength={props.min} onChange={(e) => props.func(e.target.value)} />
+    const setValue = (e) => { props.func(e.target.value) }
+
+    return <input {...props} onChange={setValue} />
 }

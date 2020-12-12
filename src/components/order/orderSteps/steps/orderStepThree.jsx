@@ -11,7 +11,7 @@ export const OrderStepThree = (props) => {
             let adress = searchRef.current.state.getAll().inputValue
             if (adress) {
                 if (window.confirm(`Это ваш адрес? ${adress}`)) {
-                    dispatch(setUserAdress(adress))
+                    dispatch(setUserAdress({adress:adress}))
                     props.navigate('end')
                 }
             }

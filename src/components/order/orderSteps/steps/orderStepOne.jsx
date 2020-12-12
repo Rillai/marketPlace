@@ -13,8 +13,7 @@ export const OrderStepOne = (props) => {
 
     const validation = (e) => {
         e.preventDefault()
-        let info = { name: name, lastName: lastName, number: number, email: email }
-        dispatch(setUserInfo(info))
+        dispatch(setUserInfo({ name: name, lastName: lastName, number: number, email: email }))
         props.navigate('stepTwo')
     }
     const setNumberFunc = (e) => {
@@ -31,12 +30,12 @@ export const OrderStepOne = (props) => {
     return (
         <>
             <h2 className='order_title'>Информация о пользователе</h2>
-            <form className='order_form_one' onSubmit={(e) => validation(e)}>
-                <Input id='name' min='3' required='true' placeholder='Имя' value={name} func={setName} />
-                <Input id='lastName' min='3' required='true' placeholder='Фамилия' value={lastName} func={setLastName} />
-                <Input id='email' type='email' min='3' required='true' placeholder='Почта' value={email} func={setEmail} />
-                <Input id='number' min='12' max='12' required='true' placeholder='Номер телефона' value={number} func={setNumberFunc} />
-                <label for='news'>
+            <form className='order_form_one' onSubmit={validation}>
+                <Input id='name' minLength='3' required placeholder='Имя' value={name} func={setName} />
+                <Input id='lastName' minLength='3' required placeholder='Фамилия' value={lastName} func={setLastName} />
+                <Input id='email' type='email' minLength='3' required placeholder='Почта' value={email} func={setEmail} />
+                <Input id='number' minLength='12' maxLength='12' required placeholder='Номер телефона' value={number} func={setNumberFunc} />
+                <label htmlFor='news'>
                     <input id='news' type='checkbox' /> Подписаться на новостную рассылку
                     </label>
                 <button type='submit'>Далее</button>

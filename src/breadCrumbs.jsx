@@ -17,6 +17,7 @@ export const BreadCrumbs = (props) => {
         return 'женская'
       case 'children':
         return 'детская'
+      default: 
     }
   }
   const location = useLocation();
@@ -27,7 +28,7 @@ export const BreadCrumbs = (props) => {
     <nav className='breadCrumbs'>
       <NavLink to='/'>главная</NavLink>
       {path.map(p => {
-        if (p == '' || /^\d/.test(p)) {
+        if (p === '' || /^\d/.test(p)) {
           return null
         } else {
           root = root + p + '/'

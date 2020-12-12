@@ -15,8 +15,7 @@ export const OrderStepTwo = (props) => {
     const regxp = (value) => { return /^\d*$/.test(value) }
     const setError = (error) => props.setError(error)
     
-    const validation = (e) => {
-        e.preventDefault()
+    const validation = () => {
         if (regxp(cardNumber, month, year, cw)) {
             if(window.confirm('Сохранить данные карты?')){
             dispatch(setCardInfo({ cardNumber: cardNumber, cardHolder: cardHolder, month: month, year: year, cw: cw }))
@@ -30,13 +29,13 @@ export const OrderStepTwo = (props) => {
     return (
         <>
             <h2 className='order_title'>Информация о карте</h2>
-            <form className='order_form_two' onSubmit={(e) => validation(e)}>
-                <Input id='cardNumber' min='13' max='19' required='true' placeholder='Номер карты' value={cardNumber} func={setCardNumber} />
-                <Input id='cardHolder' min='3' required='true' placeholder='Владелец карты' value={cardHolder} func={setCardHolder} />
+            <form className='order_form_two' onSubmit={() => validation()}>
+                <Input id='cardNumber' minLength='13' maxLength='19' required placeholder='Номер карты' value={cardNumber} func={setCardNumber} />
+                <Input id='cardHolder' minLength='3' required placeholder='Владелец карты' value={cardHolder} func={setCardHolder} />
                 <p className='order_text'>Дата окончания действия карты:</p>
-                <Input id='month' min='2' max='2' required='true' placeholder='Месяц' value={month} func={setMonth} />
-                <Input id='year' min='4' max='4' required='true' placeholder='Год' value={year} func={setYear} />
-                <Input id='cw' min='3' max='3' required='true' placeholder='Секретный код' value={cw} func={setCw} />
+                <Input id='month' minLength='2' maxLength='2' required placeholder='Месяц' value={month} func={setMonth} />
+                <Input id='year' minLength='4' maxLength='4' required placeholder='Год' value={year} func={setYear} />
+                <Input id='cw' minLength='3' maxLength='3' required placeholder='Секретный код' value={cw} func={setCw} />
                 <button type='submit'>Далее</button>
             </form>
         </>
