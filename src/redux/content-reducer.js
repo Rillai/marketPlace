@@ -2,7 +2,7 @@ const SET_PAGE = "SET_PAGE";
 const SET_ACTIVE_BUTTON = "SET_ACTIVE_BUTTON";
 const UNSET_ACTIVE_BUTTON = "UNSET_ACTIVE_BUTTON";
 
-let initialState = {
+const initialState = {
     products: [
         { id: 1, name: 'Спортивный костюи', img: 'item1', price: 7990.99, rating: 3, article: 11546631 },
         { id: 2, name: 'Пальто', img: 'item2', price: 4499.99, rating: 5, article: 8944425 },
@@ -26,19 +26,16 @@ let initialState = {
 const handlersPage = {
     [SET_PAGE]: (state, action) =>
         ({ ...state, currentPage: action.currentPage }),
-};
-const handlersButton = {
     [SET_ACTIVE_BUTTON]: (state, action) =>
         ({ ...state, activeButton: [...state.activeButton, action.id] }),
     [UNSET_ACTIVE_BUTTON]: (state, action) =>
         ({ ...state, activeButton: [...state.activeButton.filter((button) => button !== action.id),] }),
-}
+};
+
 
 export const ContentReducer = (state = initialState, action) => {
     if (handlersPage[action.type]) {
         return handlersPage[action.type](state, action);
-    } else if (handlersButton[action.type]) {
-        return handlersButton[action.type](state, action);
     }
     return state
 };

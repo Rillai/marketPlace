@@ -5,7 +5,7 @@ const SET_USER_ADRESS = "SET_USER_ADRESS";
 let initialState = {
     userInfo: { name: '', lastName: '', number: '', email: '' },
     cardInfo: { cardNumber: '', cardHolder: '', month: '', year: '', cw: '' },
-    userAdress: { adress: ''}
+    userAdress: { adress: '' }
 };
 
 const handlersInfo = {

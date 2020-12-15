@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 export const Product = (props) => {
     const activeButton = useSelector(state => state.content.activeButton)
-    const product = props.p
+    const product = props.product
     return (
         <div className='product'>
             <NavLink to='/productInfo'>

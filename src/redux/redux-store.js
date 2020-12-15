@@ -1,6 +1,6 @@
 import { combineReducers, createStore, applyMiddleware } from "redux";
-import { ContentReducer } from "./content-reducer";
 import thunkMiddleWare from "redux-thunk"
+import { ContentReducer } from "./content-reducer";
 import { CartReducer } from './cart-reducer';
 import { OrderReducer } from './order-reducer';
 
