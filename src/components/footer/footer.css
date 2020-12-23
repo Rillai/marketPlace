@@ -1,0 +1,6 @@
+.app-footer{
+    z-index: -1;
+    position: relative;
+    height: 130px;
+    background: linear-gradient(to right, #cb11ab 0, #481173 100%) no-repeat;
+}
