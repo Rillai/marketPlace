@@ -13,14 +13,11 @@
     width: calc(33.33% - 100px);
     margin: 0px 50px;
     margin-bottom: 35px;
+    padding: 10px 10px 16px;
 }
 
 .product:hover {
     box-shadow: 4px 4px 13px 0px rgba(116, 116, 116, 0.493);
-}
-
-.product {
-    padding: 10px 10px 16px;
 }
 
 .product .addToCart {
